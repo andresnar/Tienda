@@ -1,0 +1,37 @@
+﻿@model FrontEnd.Models.Entities.Producto
+
+@{
+    ViewBag.Title = "Actualizar";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="card">
+    <div class="card-header card-header-icon card-header-warning">
+        <div class="card-icon">
+            <i class="material-icons">Producto</i>
+        </div>
+        <h4 class="card-title ">Actualizar Producto</h4>
+    </div>
+    <div class="card-body">
+        <form method="post" action="Actualizar">
+            <a href="/Producto/Index" class="btn btn-sm">Regresar</a><br /><br />
+            <div class="form-group">
+                <label for="ID" class="bmd-label-floating">ID</label>
+                <input type="number" class="form-control" id="ID" name="ID" value="@Model.ID" readonly>
+            </div>
+            <div class="form-group">
+                <label for="nombre" class="bmd-label-floating">Nombre</label>
+                <input type="text" class="form-control" id="NOMBRE" name="NOMBRE" value="@Model.NOMBRE">
+            </div>
+            <div class="form-group">
+                <label for="apellido" class="bmd-label-floating">Valor</label>
+                <input type="text" class="form-control" id="VALOR" name="VALOR" value="@Model.VALOR">
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="bmd-label-floating">Estado</label>
+                <input type="number" class="form-control" id="ESTADO" name="ESTADO" value="@Model.ESTADO">
+            </div>
+            <input type="submit" id="boton2" class="btn btn-reddit" value="Actualizar" />
+        </form>
+    </div>
+</div>

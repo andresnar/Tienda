@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FrontEnd.Models.Entities.Producto>
+
+@{
+    ViewBag.Title = "Buscar";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header card-header-icon card-header-warning">
+        <div class="card-icon">
+            <i class="material-icons">Productos</i>
+        </div>
+        <h4 class="card-title ">Listado de Productos</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="text-primary">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Valor
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Editar
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NOMBRE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VALOR)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ESTADO)
+                            </td>
+                            <td>
+                                @Html.ActionLink(" ", "Actualizar", "Producto", new { idProducto = item.ID }, new { @class = "btn btn-warning" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <a href="/Producto/Index" class="btn btn-reddit">Regresar</a>
+    </div>
+</div>

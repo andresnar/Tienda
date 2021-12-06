@@ -1,0 +1,69 @@
+﻿@model FrontEnd.Models.DTO.VentaDTO
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<h2>Módulo de Ventas</h2>
+
+<div class="card ">
+    <div class="card-header ">
+        <h4 class="card-title">
+            Diligencia los datos<br />
+        </h4>
+    </div>
+    <div class="card-body">
+        <form method="post" action="Comprar">
+            <label for="CEDULA_CLIENTE">Seleccione un cliente</label>
+            @Html.DropDownList("CEDULA_CLIENTE", new SelectList(ViewBag.ListClient, "CEDULA", "NOMBRE"), htmlAttributes: new { @class = "form-control" })
+            <br />
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="text-primary">
+                            <tr>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Nombre
+                                </th>
+                                <th>
+                                    Valor
+                                </th>
+                                <th>
+                                    Comprar
+                                </th>
+                                <th>
+                                    Cantidad
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.AvailableProducts.Count();i++)
+                            {
+                                <tr>
+                                    <td>
+                                        @Model.ListProd[i].ID
+                                    </td>
+                                    <td>
+                                        @Model.ListProd[i].NOMBRE
+                                    </td>
+                                    <td>
+                                        @Model.ListProd[i].VALOR
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="SelectedProducts" value="@Model.AvailableProducts[i].Value" />                                        
+                                    </td>
+                                    <td>
+                                        <input type="number" name="AmauntProducts" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <input type="submit" id="boton2" class="btn btn-reddit" value="Comprar" />
+        </form>
+    </div>
+</div>

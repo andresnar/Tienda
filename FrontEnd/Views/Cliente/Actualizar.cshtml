@@ -1,0 +1,41 @@
+﻿@model FrontEnd.Models.Entities.Cliente
+
+@{
+    ViewBag.Title = "Actualizar";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="card">
+    <div class="card-header card-header-icon card-header-warning">
+        <div class="card-icon">
+            <i class="material-icons">Clientes</i>
+        </div>
+        <h4 class="card-title ">Actualizar Cliente</h4>
+    </div>
+    <div class="card-body">
+        <form method="post" action="Actualizar">
+            <a href="/Cliente/Index" class="btn btn-sm">Regresar</a><br /><br />
+            <div class="form-group">
+                <label for="cedula" class="bmd-label-floating">Cedula</label>
+                <input type="number" class="form-control" id="CEDULA" name="CEDULA" readonly value="@Model.CEDULA">
+            </div>
+            <div class="form-group">
+                <label for="nombre" class="bmd-label-floating">Nombre</label>
+                <input type="text" class="form-control" id="NOMBRE" name="NOMBRE" value="@Model.NOMBRE">
+            </div>
+            <div class="form-group">
+                <label for="apellido" class="bmd-label-floating">Apellido</label>
+                <input type="text" class="form-control" id="APELLIDO" name="APELLIDO" value="@Model.APELLIDO">
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="bmd-label-floating">Telefono</label>
+                <input type="text" class="form-control" id="TELEFONO" name="TELEFONO" value="@Model.TELEFONO">
+            </div>
+            <div class="form-group">
+                <label for="estado" class="bmd-label-floating">Estado</label>
+                <input type="number" class="form-control" id="ESTADO" name="ESTADO" value="@Model.ESTADO">
+            </div>
+            <input type="submit" id="boton2" class="btn btn-reddit" value="Actualizar" />
+        </form>
+    </div>
+</div>
